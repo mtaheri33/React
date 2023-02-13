@@ -19,8 +19,13 @@ class DefaultApp extends Component {
         <h1>Parent App:</h1>
         <p>parent line 1</p>
         <p>parent line 2</p>
-        <ChildAppOne name={this.state.childOneName} newLine={this.state.childOneNewLine} />
-        <ChildAppTwo name={this.state.childTwoName} newLine={this.state.childTwoNewLine} />
+        <ChildAppOne name={this.state.childOneName} newLine={this.state.childOneNewLine}>
+          <p>child one line 4</p>
+        </ChildAppOne>
+        <ChildAppTwo name={this.state.childTwoName} newLine={this.state.childTwoNewLine}>
+          <p>child two line 4</p>
+          <p>second element of props.children</p>
+        </ChildAppTwo>
       </>
     )
   }
