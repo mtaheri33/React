@@ -9,8 +9,9 @@ class ChildAppTwo extends Component {
     return (
       <>
         <h2>Child App Two:</h2>
-        <p>child two line 1</p>
-        <p>child two line 2</p>
+        <p>{this.props.name} line 1</p>
+        <p>{this.props.name} line 2</p>
+        <p>{this.props.newLine}</p>
       </>
     )
   }
