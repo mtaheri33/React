@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
+import ChildAppOne from './children/childAppOne';
+import ChildAppTwo from './children/childAppTwo';
 
 class DefaultApp extends Component {
   constructor() {
     super();
-    this.state = {
-      firstValue: 1,
-      secondValue: 2,
-    }
-    setTimeout(() => {
-      this.setState({ secondValue: 20 })
-    }, 3000);
-    setTimeout(() => {
-      this.setState({ thirdValue: 3 })
-    }, 4000);
   }
 
   render() {
     return (
       <>
-        <h1>React Application Template</h1>
-        <p>The first value of {this.state.firstValue} is not changed.</p>
-        <p>The second value {this.state.secondValue} will change after 3 seconds.</p>
-        <p>The third value {this.state.thirdValue ? this.state.thirdValue : '____'} will appear after 4 seconds</p>
+        <h1>Parent App:</h1>
+        <p>parent line 1</p>
+        <p>parent line 2</p>
+        <ChildAppOne />
+        <ChildAppTwo />
       </>
     )
   }
