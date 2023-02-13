@@ -1,12 +1,10 @@
 import React from 'react';
 
 let ChildAppOne = (props) => {
+  const newValue = 1;
   return (
     <>
-      <h2>Child App One:</h2>
-      <p>{props.name} line 1</p>
-      <p>{props.name} line 2</p>
-      <p>{props.newLine}</p>
+      <button onClick={() => props.setValue(newValue)}>Click to change value</button>
     </>
   )
 }
