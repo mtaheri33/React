@@ -1,7 +1,8 @@
-h1 {
+body {
     font-family: Helvetica, sans-serif;
 }
 
-h2 {
-    font-weight: normal;
+header,
+footer {
+    font-weight: lighter;
 }

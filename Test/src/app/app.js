@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
-import "./styles.css";
-import ChildAppOne from './components/childAppOne';
+import './styles.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-class DefaultApp extends Component {
+import Header from './components/header';
+import Footer from './components/footer';
+import Home from './components/home';
+import About from './components/about';
+import Value from './components/value';
+import NotFound from './components/notFound';
+
+class App extends Component {
   constructor() {
     super();
   }
 
   render() {
     return (
-      <>
-        <h1>Parent App</h1>
-        <ChildAppOne />
-      </>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/value' element={<Value />} />
+          <Route path='/value/:number' element={<Value />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
     )
   }
 }
 
-export default DefaultApp;
+export default App;
