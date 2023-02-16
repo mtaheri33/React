@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 class Home extends Component {
   constructor() {
@@ -7,28 +7,33 @@ class Home extends Component {
       name: null,
       age: null,
     }
-    this.nameInputHandler = this.nameInputHandler.bind(this);
-    this.ageInputHandler = this.ageInputHandler.bind(this);
+    this.formInputHandler = this.formInputHandler.bind(this);
+    this.name = createRef();
+    this.age = createRef();
   }
 
-  nameInputHandler(event) {
-    this.setState({ name: event.target.value })
-  }
-
-  ageInputHandler(event) {
-    this.setState({ age: event.target.value })
+  formInputHandler(event) {
+    event.preventDefault();
+    this.setState({
+      name: this.name.current.value,
+      age: this.age.current.value,
+    });
   }
 
   render() {
     return (
       <>
         <p>Home</p>
-        <label>Name:</label>
-        <input type='text' onChange={this.nameInputHandler}></input>
-        <br></br>
-        <label>Age:</label>
-        <input type='number' onChange={this.ageInputHandler}></input>
-        {/* These will update as characters are typed into the inputs. */}
+        <form onSubmit={this.formInputHandler}>
+          <label>Name:</label>
+          <input type='text' ref={this.name}></input>
+          <br></br>
+          <label>Age:</label>
+          <input type='number' ref={this.age}></input>
+          <br></br>
+          <button>Submit</button>
+        </form>
+        {/* These will update once the form is submitted. */}
         <p>Name: {this.state.name}</p>
         <p>Age: {this.state.age}</p>
       </>
