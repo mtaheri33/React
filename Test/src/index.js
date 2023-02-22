@@ -1,7 +1,9 @@
 // This file is used to bootstrap the entire react application.
 
 import React from "react"; // default import
-import * as ReactDOM from "react-dom/client"; // importing all modules 
+import * as ReactDOM from "react-dom/client"; // importing all modules
+import { Provider } from "react-redux";
+import store from "./app/state/store";
 
 import App from "./app/app";//react application
 
@@ -9,5 +11,7 @@ import App from "./app/app";//react application
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 root.render(
-  <App />
-)
+  <Provider store={store}>
+    <App />
+  </Provider>
+);

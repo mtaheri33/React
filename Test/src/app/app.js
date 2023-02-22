@@ -7,6 +7,7 @@ import Footer from './components/footer';
 import Home from './components/home';
 import About from './components/about';
 import Value from './components/value';
+import User from './components/user';
 import NotFound from './components/notFound';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/about' element={<About />} />
           <Route path='/value' element={<Value />} />
           <Route path='/value/:number' element={<Value />} />
+          <Route path='/user' element={<User />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

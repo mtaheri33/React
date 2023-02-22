@@ -7,7 +7,8 @@ const Header = function () {
       <nav>
         <NavLink to='/home'>Home </NavLink>
         <NavLink to='/about'>About </NavLink>
-        <NavLink to='/value'>Value</NavLink>
+        <NavLink to='/value'>Value </NavLink>
+        <NavLink to='/user'>User</NavLink>
       </nav>
     </header>
   )
