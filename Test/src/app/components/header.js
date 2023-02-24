@@ -11,6 +11,7 @@ const Header = function (props) {
         <NavLink to='/about'>About </NavLink>
         <NavLink to='/value'>Value </NavLink>
         <NavLink to='/user'>User </NavLink>
+        <NavLink to='/user2'>User2 </NavLink>
         User: {userName}
       </nav>
     </header>
